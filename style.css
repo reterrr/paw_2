@@ -2,3 +2,11 @@ html {
   height: 100%;
   width: 100%;
 }
+
+.button-group {
+      margin-bottom: 10px;
+}
+
+.sub-buttons {
+      margin-left: 20px; /* Indent the subnumbered buttons */
+}
