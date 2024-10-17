@@ -99,24 +99,47 @@
     });
   });
 
-  // Placeholder dla przyszłych funkcji
-  cw2.addEventListener("click", function () {
-    showLoading(true); // Pokaż modal
-    setTimeout(() => {
-      showLoading(false); // Ukryj modal po 2 sekundach (symulacja ładowania)
-      answer.innerHTML = '<p>Loading... (cw2)</p>';
-      console.log('cw2 button clicked'); // Logowanie kliknięcia przycisku cw2
-    }, 2000);
-  });
-
   cw3.addEventListener("click", function () {
-    showLoading(true); // Pokaż modal
-    setTimeout(() => {
-      showLoading(false); // Ukryj modal po 2 sekundach (symulacja ładowania)
-      answer.innerHTML = '<p>Loading... (cw3)</p>';
-      console.log('cw3 button clicked'); // Logowanie kliknięcia przycisku cw3
-    }, 2000);
-  });
+  showLoading(true); // Show loading modal
+  setTimeout(() => {
+    // Fetch from db.json
+    fetch('https://my-json-server.typicode.com/reterrr/my-repo/db')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        // Parse response as JSON
+        return response.json();
+      })
+      .then(data => {
+        showLoading(false); // Hide loading modal
+        
+        const posts = data.posts;  // Posts from db.json
+        const comments = data.comments;  // Comments from db.json
+        
+        // Display posts and comments (you can modify this as needed)
+        let postsHtml = '<h3>Posts:</h3>';
+        posts.forEach(post => {
+          postsHtml += `<p>Post ID: ${post.id}, Title: ${post.title}</p>`;
+        });
+        
+        let commentsHtml = '<h3>Comments:</h3>';
+        comments.forEach(comment => {
+          commentsHtml += `<p>Comment on Post ID ${comment.post_id}: ${comment.body}</p>`;
+        });
+        
+        // Combine both parts and display on the page
+        answer.innerHTML = postsHtml + commentsHtml;
+        
+        console.log('cw3 button clicked, fetched data from db.json');
+      })
+      .catch(error => {
+        showLoading(false); // Hide loading modal
+        answer.innerHTML = '<p>Error fetching data</p>';
+        console.error('Error fetching data:', error);
+      });
+  }, 2000); // Simulate delay for loading modal
+});
 
 })();
 
