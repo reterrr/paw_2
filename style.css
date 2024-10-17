@@ -13,7 +13,7 @@ ul.styled-posts li {
   border: 2px solid #778899;
   border-radius: 10px;
   background-color: #FFF8DC; 
-}å
+}
 
 
 
@@ -43,4 +43,62 @@ ul.styled-posts p {
   font-size: 1.5em;
   border-radius: 10px;
   z-index: 1000; 
+}
+
+/* Styl dla kontenera z postami */
+.post-container {
+  background-color: #f4f4f9; /* Jasne tło */
+  border-radius: 10px; /* Zaokrąglone rogi */
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtelny cień */
+  transition: transform 0.3s ease;
+}
+
+.post-container:hover {
+  transform: scale(1.03); /* Powiększenie przy najechaniu myszką */
+}
+
+/* Styl dla tytułu postu */
+.post-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.post-title:hover {
+  color: #ff6f61; /* Zmiana koloru najechania na tytuł */
+}
+
+/* Styl dla treści postu */
+.post-body {
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Styl dla komentarzy */
+.comment-container {
+  background-color: #ffffff;
+  border-left: 4px solid #ff6f61;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.comment-container p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Styl dla tytułu sekcji komentarzy */
+.comment-title {
+  font-weight: bold;
+  color: #444;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.3em;
 }
