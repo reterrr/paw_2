@@ -10,3 +10,112 @@ html {
 .sub-buttons {
       margin-left: 20px; /* Indent the subnumbered buttons */
 }
+
+body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f9;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    #button-container {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #6200ea;
+      color: white;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      margin-bottom: 5px;
+    }
+
+    button:hover {
+      background-color: #3700b3;
+    }
+
+    .sub-buttons {
+      margin-left: 20px; /* Indent subnumbered buttons */
+    }
+
+    #answer {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 15px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .post {
+      margin-bottom: 20px;
+    }
+
+    .post h3 {
+      color: #6200ea;
+    }
+
+    .processing {
+      color: orange;
+      font-weight: bold;
+    }
+
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+    
+    .loading-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+    }
+
+    .loading-modal.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .loading-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
